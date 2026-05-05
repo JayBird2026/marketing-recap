@@ -265,6 +265,94 @@
     vertical-align: middle;
   }
 
+  /* Strategic Summary */
+  .summary-overview {
+    background: #fff;
+    border-radius: 12px;
+    padding: 22px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-left: 4px solid #1e5f8e;
+    font-size: 14.5px;
+    color: #2c3a4a;
+    line-height: 1.65;
+  }
+  .summary-overview strong { color: #0d1b2a; }
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .summary-col {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-top: 4px solid #ccc;
+  }
+  .summary-col.working { border-top-color: #27ae60; }
+  .summary-col.needs   { border-top-color: #e74c3c; }
+  .summary-col h3 {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .summary-col.working h3 { color: #1e8449; }
+  .summary-col.needs   h3 { color: #b03a2e; }
+  .summary-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .summary-col li {
+    font-size: 13.5px;
+    padding: 8px 0 8px 22px;
+    border-bottom: 1px solid #eef0f3;
+    position: relative;
+    color: #2c3a4a;
+    line-height: 1.55;
+  }
+  .summary-col li:last-child { border-bottom: none; }
+  .summary-col li::before {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    font-weight: 800;
+  }
+  .summary-col.working li::before { content: "✓"; color: #27ae60; }
+  .summary-col.needs   li::before { content: "!"; color: #e74c3c; }
+  .summary-col li strong { color: #0d1b2a; }
+  .actions-card {
+    background: #0d1b2a;
+    color: #fff;
+    border-radius: 12px;
+    padding: 22px 26px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-top: 16px;
+  }
+  .actions-card h3 {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #f5a623;
+    margin-bottom: 12px;
+  }
+  .actions-card ol {
+    margin: 0;
+    padding-left: 22px;
+    color: #d6e2ee;
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+  .actions-card ol li { padding: 4px 0; }
+  .actions-card ol li strong { color: #fff; }
+
   /* Footer */
   .footer {
     margin-top: 32px;
@@ -279,6 +367,7 @@
     .snapshot { grid-template-columns: 1fr; }
     .roas-grid { grid-template-columns: 1fr 1fr; }
     .callboard { grid-template-columns: repeat(3, 1fr); row-gap: 16px; }
+    .summary-grid { grid-template-columns: 1fr; }
     .header { padding: 28px 22px; }
     .header h1 { font-size: 30px; }
   }
@@ -575,6 +664,48 @@
       </tbody>
     </table>
   </section>
+
+  <!-- Strategic Summary -->
+  <div class="section-title">Strategic Summary</div>
+  <section class="summary-overview">
+    A revenue-strong week — <strong>$195,556 in completed revenue</strong> on $275,383 booked. <strong>HVAC Installation</strong> alone drove $146,470 (74.9% of total) at a $6,103 average ticket, while <strong>Paid SEO</strong> (17.28x ROAS) and <strong>Google LSA</strong> (12.83x) continued to anchor the paid mix. The headline concern is operational rather than media: <strong>abandoned calls climbed to 314 (38.1%)</strong>, up 7 points week-over-week — meaningful revenue exposure at a $2,444 average ticket. Focus next week is on call recovery and tightening budget caps on PPC HVAC and Paid Social.
+  </section>
+
+  <div class="summary-grid">
+    <div class="summary-col working">
+      <h3>What's Working</h3>
+      <ul>
+        <li><strong>Paid SEO at 17.28x ROAS</strong> — $120,868 revenue on $6,995 spend. $20.53 cost-per-lead is exceptional.</li>
+        <li><strong>Google LSA driving volume</strong> — $185,445 completed revenue, 42% book rate, well within the $17,000 budget.</li>
+        <li><strong>PPC Plumbing solid at 5.37x</strong> — strong 58.2% book rate with $2,234 budget remaining for scaling.</li>
+        <li><strong>PPC HVAC rebound to 2.09x</strong> — up from 0.20 last week, driven by an installation attribution.</li>
+        <li><strong>Organic word-of-mouth</strong> — Customer Referral + Previous Customer combined for $45,884 with zero ad spend.</li>
+        <li><strong>HVAC Install division</strong> — $146,470 revenue at a $6,103 avg ticket; 74.9% of weekly total.</li>
+      </ul>
+    </div>
+    <div class="summary-col needs">
+      <h3>What Needs Work</h3>
+      <ul>
+        <li><strong>Abandon rate at 38.1%</strong> — 314 of 825 calls unanswered, up from 31.0% last week.</li>
+        <li><strong>GMB–Virginia at 71.4% abandon</strong> — worsening from 62%; routing review urgent.</li>
+        <li><strong>Website abandon at 40%</strong> — 46 of 115 calls dropped, a new high for that channel.</li>
+        <li><strong>Budget overruns</strong> — PPC HVAC ran $3,977 over and Paid Social $1,416 over their weekly caps.</li>
+        <li><strong>Direct Mail tracking gap</strong> — 0.41x reported ROAS, but cross-reference confirms true contribution exceeds what ServiceTitan captures.</li>
+        <li><strong>PPC HVAC audit pending</strong> — managing-team response still outstanding from last week.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="actions-card">
+    <h3>Recommended Next Steps</h3>
+    <ol>
+      <li><strong>Abandoned-call recovery sweep.</strong> Pull the 314 abandons from ServiceTitan; same-day or next-morning callback/SMS outreach. Priority: GMB–Virginia and Website lines.</li>
+      <li><strong>GMB–Virginia routing audit.</strong> Confirm GBP forwarding number and evaluate dedicated CSR coverage or overflow answering for the Virginia territory.</li>
+      <li><strong>Continue Direct Mail attribution work.</strong> Don't make spend decisions on ServiceTitan ROAS alone — finish the multi-layer (tracked calls + name match + address match) framework first.</li>
+      <li><strong>Push PPC team for hard budget caps.</strong> Both PPC HVAC and Paid Social exceeded weekly budgets; lock caps in Google Ads and Meta to stop unplanned overspend.</li>
+      <li><strong>Watch PPC HVAC closely.</strong> Last week's improvement was an attribution event, not a campaign correction — escalate if the audit response stays unanswered.</li>
+    </ol>
+  </div>
 
   <footer class="footer">
     Generated by Claude for Jay Is On The Way · Reporting Period: April 20 – 26, 2026<br />
