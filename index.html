@@ -1,133 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Jay Is On The Way — Weekly Marketing Recap | April 20–26, 2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jay Is On The Way — Weekly Marketing Performance Recap | April 20–26, 2026</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background: #f0f2f5;
-    color: #1d1d1f;
+    color: #1a1a1a;
     line-height: 1.5;
-    padding: 24px 16px 48px;
+    padding: 24px 16px;
   }
   .container { max-width: 1100px; margin: 0 auto; }
 
-  /* Header */
+  /* HEADER */
   .header {
     background: linear-gradient(135deg, #0d1b2a, #1b3a5c, #1e5f8e);
     color: #fff;
-    border-radius: 16px;
-    padding: 36px 36px 32px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+    padding: 36px 32px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
     margin-bottom: 28px;
   }
-  .header .greeting {
+  .greeting {
     font-size: 12px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #cfd8e3;
+    color: #cfd9e8;
     margin-bottom: 10px;
   }
   .header h1 {
     font-size: 38px;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.5px;
     margin-bottom: 6px;
   }
   .header h1 .accent { color: #f5a623; }
-  .header .subtitle {
-    font-size: 17px;
-    color: #d6e2ee;
+  .subtitle {
+    font-size: 16px;
+    color: #d3dceb;
     margin-bottom: 18px;
   }
   .date-badge {
     display: inline-block;
     background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.25);
-    padding: 8px 16px;
-    border-radius: 999px;
+    color: #fff;
     font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.2);
   }
 
-  /* Section title */
+  /* SECTION */
+  section { margin-bottom: 28px; }
   .section-title {
     font-size: 13px;
-    font-weight: 700;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    color: #5b6b7c;
-    margin: 28px 4px 14px;
+    color: #5a6b80;
+    margin-bottom: 14px;
+    font-weight: 600;
   }
 
-  /* Snapshot cards */
-  .snapshot {
+  /* EXEC SNAPSHOT */
+  .snapshot-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
-  .card {
+  .snap-card {
     background: #fff;
     border-radius: 12px;
-    padding: 22px 22px 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    border-top: 4px solid #ccc;
+    padding: 22px;
+    border-top: 4px solid #1e5f8e;
   }
-  .card .label {
+  .snap-card.green { border-top-color: #27ae60; }
+  .snap-card.orange { border-top-color: #f5a623; }
+  .snap-label {
     font-size: 12px;
-    letter-spacing: 1.5px;
+    color: #6b7280;
     text-transform: uppercase;
-    color: #6b7785;
-    font-weight: 600;
+    letter-spacing: 1px;
     margin-bottom: 8px;
   }
-  .card .value {
-    font-size: 30px;
-    font-weight: 800;
-    color: #0d1b2a;
-    letter-spacing: -0.5px;
+  .snap-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
   }
-  .card .meta {
-    margin-top: 8px;
-    font-size: 13px;
-    color: #5b6b7c;
-    font-weight: 500;
+  .snap-sub { font-size: 13px; color: #6b7280; }
+  .snap-pct {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 14px;
+    font-weight: 600;
   }
-  .card.total-rev { border-top-color: #1e5f8e; }
-  .card.paid-rev  { border-top-color: #27ae60; }
-  .card.org-rev   { border-top-color: #f5a623; }
+  .pct-green { color: #27ae60; }
+  .pct-orange { color: #f5a623; }
 
-  /* Call board */
-  .callboard {
+  /* CALL BOARD */
+  .call-board {
     background: #0d1b2a;
     color: #fff;
     border-radius: 12px;
     padding: 22px 24px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 18px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    gap: 12px;
   }
-  .callboard .item .label {
+  .call-stat {
+    text-align: center;
+    padding: 4px 6px;
+  }
+  .call-stat .label {
     font-size: 11px;
-    letter-spacing: 1.5px;
+    color: #9bb0c9;
     text-transform: uppercase;
-    color: #9bb0c5;
-    font-weight: 600;
+    letter-spacing: 1px;
     margin-bottom: 6px;
   }
-  .callboard .item .value {
+  .call-stat .value {
     font-size: 24px;
-    font-weight: 800;
-    letter-spacing: -0.3px;
+    font-weight: 700;
+    color: #fff;
   }
-  .callboard .item.abandoned .value { color: #f5a623; }
+  .call-stat .value.abandoned { color: #f5a623; }
 
-  /* ROAS cards */
+  /* DIVISION CARDS */
+  .division-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .div-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 20px;
+  }
+  .div-title {
+    font-size: 14px;
+    color: #1e5f8e;
+    font-weight: 600;
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+  }
+  .div-tag {
+    display: inline-block;
+    background: #eaf1f8;
+    color: #1e5f8e;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 10px;
+  }
+  .div-revenue {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .div-stats {
+    font-size: 13px;
+    color: #4a5568;
+  }
+  .div-stats div { display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px solid #f3f4f6; }
+  .div-stats div:last-child { border-bottom: none; }
+
+  /* ROAS CARDS */
   .roas-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -136,581 +181,555 @@
   .roas-card {
     background: #fff;
     border-radius: 12px;
-    padding: 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    border-left: 4px solid #ccc;
+    padding: 20px;
+    border-left: 5px solid #27ae60;
   }
-  .roas-card.excellent { border-left-color: #27ae60; }
-  .roas-card.moderate  { border-left-color: #f5a623; }
-  .roas-card.below     { border-left-color: #e74c3c; }
-  .roas-card .channel {
+  .roas-card.warn { border-left-color: #f5a623; }
+  .roas-card.bad { border-left-color: #e74c3c; }
+  .roas-channel {
     font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+  }
+  .roas-value {
+    font-size: 30px;
     font-weight: 700;
-    color: #0d1b2a;
+    color: #27ae60;
     margin-bottom: 4px;
   }
-  .roas-card .roas-value {
-    font-size: 36px;
-    font-weight: 800;
-    letter-spacing: -1px;
-    margin: 6px 0 4px;
-  }
-  .roas-card.excellent .roas-value { color: #27ae60; }
-  .roas-card.moderate  .roas-value { color: #f5a623; }
-  .roas-card.below     .roas-value { color: #e74c3c; }
-  .roas-card .badge {
+  .roas-value.warn { color: #f5a623; }
+  .roas-value.bad { color: #e74c3c; }
+  .roas-badge {
     display: inline-block;
     font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    padding: 4px 10px;
-    border-radius: 999px;
-    margin-bottom: 12px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-bottom: 10px;
   }
-  .roas-card.excellent .badge { background: #e7f7ee; color: #1e8449; }
-  .roas-card.moderate  .badge { background: #fdf2dc; color: #a76a08; }
-  .roas-card.below     .badge { background: #fdecea; color: #b03a2e; }
-  .roas-card .stats {
-    border-top: 1px solid #eef0f3;
-    padding-top: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px 14px;
-    font-size: 12.5px;
+  .badge-good { background: #e7f7ee; color: #1b7a3f; }
+  .badge-mid { background: #fdf3e1; color: #a06700; }
+  .badge-bad { background: #fce8e6; color: #b22e21; }
+  .roas-detail {
+    font-size: 12px;
+    color: #5a6b80;
+    line-height: 1.7;
   }
-  .roas-card .stats .stat .lbl {
-    color: #7a8898;
-    font-size: 11px;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-    margin-bottom: 2px;
-  }
-  .roas-card .stats .stat .val {
-    color: #0d1b2a;
-    font-weight: 700;
-    font-size: 13.5px;
-  }
+  .roas-detail .row { display: flex; justify-content: space-between; }
 
-  /* Campaign table */
+  /* CAMPAIGN TABLE */
   .table-wrap {
     background: #fff;
     border-radius: 12px;
-    overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    overflow: hidden;
   }
   table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 13.5px;
+    font-size: 13px;
   }
-  th {
+  thead {
     background: #0d1b2a;
     color: #fff;
+  }
+  th {
+    padding: 12px 10px;
     text-align: left;
-    font-weight: 700;
-    letter-spacing: 0.4px;
-    padding: 12px 14px;
-    font-size: 12px;
+    font-size: 11px;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
   }
   th.num, td.num { text-align: right; }
-  td {
-    padding: 12px 14px;
-    border-bottom: 1px solid #eef0f3;
-    color: #1d1d1f;
-  }
-  tr:last-child td { border-bottom: none; }
-  tr.total-row td {
+  tbody tr { border-bottom: 1px solid #eef0f3; }
+  tbody tr:last-child { border-bottom: none; }
+  td { padding: 11px 10px; vertical-align: middle; }
+  tr.total-row {
     background: #eaf1f8;
-    font-weight: 800;
-    color: #0d1b2a;
-    border-top: 2px solid #c5d3e0;
+    font-weight: 700;
   }
-  .pct-cell {
+  tr.total-row td { color: #0d1b2a; font-size: 13.5px; }
+  .pct-bar-wrap {
     display: flex;
     align-items: center;
-    gap: 10px;
-    min-width: 130px;
+    gap: 8px;
+    min-width: 110px;
   }
   .pct-bar {
     flex: 1;
     height: 6px;
     background: #eef0f3;
-    border-radius: 999px;
+    border-radius: 3px;
     overflow: hidden;
   }
-  .pct-bar > span {
-    display: block;
+  .pct-bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, #1e5f8e, #1b3a5c);
-    border-radius: 999px;
+    background: linear-gradient(90deg, #1e5f8e, #f5a623);
+    border-radius: 3px;
   }
-  .pct-num {
-    font-weight: 700;
-    color: #0d1b2a;
-    font-size: 12.5px;
-    min-width: 42px;
-    text-align: right;
-  }
-  .ttype {
+  .pct-num { font-size: 11px; color: #5a6b80; min-width: 36px; text-align: right; }
+  .camp-tag {
     display: inline-block;
-    font-size: 10.5px;
-    font-weight: 700;
-    letter-spacing: 0.4px;
-    padding: 2px 8px;
-    border-radius: 999px;
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 4px;
     background: #eef0f3;
-    color: #4a5868;
+    color: #5a6b80;
     margin-left: 6px;
-    vertical-align: middle;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
   }
 
-  /* Strategic Summary */
-  .summary-overview {
-    background: #fff;
-    border-radius: 12px;
-    padding: 22px 24px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    border-left: 4px solid #1e5f8e;
-    font-size: 14.5px;
-    color: #2c3a4a;
-    line-height: 1.65;
-  }
-  .summary-overview strong { color: #0d1b2a; }
-  .summary-grid {
+  /* ANALYSIS */
+  .analysis-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
-    margin-top: 16px;
   }
-  .summary-col {
+  .analysis-card {
     background: #fff;
     border-radius: 12px;
-    padding: 20px 22px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    border-top: 4px solid #ccc;
+    padding: 20px 22px;
   }
-  .summary-col.working { border-top-color: #27ae60; }
-  .summary-col.needs   { border-top-color: #e74c3c; }
-  .summary-col h3 {
-    font-size: 12.5px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+  .analysis-card h3 {
+    font-size: 15px;
     margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eef0f3;
   }
-  .summary-col.working h3 { color: #1e8449; }
-  .summary-col.needs   h3 { color: #b03a2e; }
-  .summary-col ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .summary-col li {
-    font-size: 13.5px;
-    padding: 8px 0 8px 22px;
-    border-bottom: 1px solid #eef0f3;
+  .analysis-card.wins h3 { color: #1b7a3f; border-bottom-color: #d8f0e2; }
+  .analysis-card.attn h3 { color: #b22e21; border-bottom-color: #fadcd8; }
+  .analysis-card ul { list-style: none; }
+  .analysis-card li {
+    font-size: 13px;
+    color: #2a3744;
+    margin-bottom: 10px;
+    padding-left: 18px;
     position: relative;
-    color: #2c3a4a;
     line-height: 1.55;
   }
-  .summary-col li:last-child { border-bottom: none; }
-  .summary-col li::before {
+  .analysis-card li:before {
+    content: "";
     position: absolute;
     left: 0;
     top: 8px;
-    font-weight: 800;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #1e5f8e;
   }
-  .summary-col.working li::before { content: "✓"; color: #27ae60; }
-  .summary-col.needs   li::before { content: "!"; color: #e74c3c; }
-  .summary-col li strong { color: #0d1b2a; }
-  .actions-card {
-    background: #0d1b2a;
-    color: #fff;
-    border-radius: 12px;
-    padding: 22px 26px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    margin-top: 16px;
-  }
-  .actions-card h3 {
-    font-size: 12.5px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #f5a623;
-    margin-bottom: 12px;
-  }
-  .actions-card ol {
-    margin: 0;
-    padding-left: 22px;
-    color: #d6e2ee;
-    font-size: 13.5px;
-    line-height: 1.65;
-  }
-  .actions-card ol li { padding: 4px 0; }
-  .actions-card ol li strong { color: #fff; }
+  .analysis-card.wins li:before { background: #27ae60; }
+  .analysis-card.attn li:before { background: #e74c3c; }
 
-  /* Footer */
+  /* FOOTER */
   .footer {
     margin-top: 32px;
+    padding: 18px;
     text-align: center;
-    color: #6b7785;
-    font-size: 12.5px;
-    line-height: 1.7;
+    font-size: 12px;
+    color: #6b7280;
+    border-top: 1px solid #e1e4ea;
   }
 
-  /* Responsive */
-  @media (max-width: 880px) {
-    .snapshot { grid-template-columns: 1fr; }
-    .roas-grid { grid-template-columns: 1fr 1fr; }
-    .callboard { grid-template-columns: repeat(3, 1fr); row-gap: 16px; }
-    .summary-grid { grid-template-columns: 1fr; }
-    .header { padding: 28px 22px; }
-    .header h1 { font-size: 30px; }
-  }
-  @media (max-width: 540px) {
-    .roas-grid { grid-template-columns: 1fr; }
-    .callboard { grid-template-columns: repeat(2, 1fr); }
-    table { font-size: 12.5px; }
-    th, td { padding: 9px 10px; }
-    .pct-cell { min-width: 90px; }
+  /* RESPONSIVE */
+  @media (max-width: 820px) {
+    .snapshot-grid, .division-grid, .roas-grid, .analysis-grid { grid-template-columns: 1fr; }
+    .call-board { grid-template-columns: repeat(3, 1fr); }
+    .header h1 { font-size: 28px; }
+    table { font-size: 12px; }
+    th, td { padding: 8px 6px; }
+    .pct-bar-wrap { min-width: 70px; }
   }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- Header -->
-  <header class="header">
+  <!-- HEADER -->
+  <div class="header">
     <div class="greeting">Good Morning, Jamie</div>
     <h1>Jay Is <span class="accent">On The Way</span></h1>
     <div class="subtitle">Weekly Marketing Performance Recap</div>
-    <div class="date-badge">Reporting Period: April 20 – 26, 2026</div>
-  </header>
-
-  <!-- Executive Snapshot -->
-  <div class="section-title">Executive Snapshot</div>
-  <section class="snapshot">
-    <div class="card total-rev">
-      <div class="label">Total Completed Revenue</div>
-      <div class="value">$195,556</div>
-      <div class="meta">All Divisions Combined · 80 jobs completed</div>
-    </div>
-    <div class="card paid-rev">
-      <div class="label">Paid Marketing Revenue</div>
-      <div class="value">$60,027</div>
-      <div class="meta">30.7% of weekly revenue</div>
-    </div>
-    <div class="card org-rev">
-      <div class="label">Organic / Direct Revenue</div>
-      <div class="value">$135,529</div>
-      <div class="meta">69.3% of weekly revenue</div>
-    </div>
-  </section>
-
-  <!-- Call Board -->
-  <div class="section-title">Call Board</div>
-  <section class="callboard">
-    <div class="item">
-      <div class="label">Inbound Calls</div>
-      <div class="value">825</div>
-    </div>
-    <div class="item">
-      <div class="label">Calls Answered</div>
-      <div class="value">511</div>
-    </div>
-    <div class="item">
-      <div class="label">Jobs Booked</div>
-      <div class="value">162</div>
-    </div>
-    <div class="item abandoned">
-      <div class="label">Abandoned</div>
-      <div class="value">314</div>
-    </div>
-    <div class="item">
-      <div class="label">Jobs Completed</div>
-      <div class="value">80</div>
-    </div>
-    <div class="item">
-      <div class="label">Book Rate</div>
-      <div class="value">19.6%</div>
-    </div>
-  </section>
-
-  <!-- ROAS by Channel -->
-  <div class="section-title">ROAS by Channel — April 20 – 26, 2026</div>
-  <section class="roas-grid">
-
-    <div class="roas-card excellent">
-      <div class="channel">Paid SEO — GBP &amp; Website</div>
-      <div class="roas-value">17.28x</div>
-      <div class="badge">★ Excellent</div>
-      <div class="stats">
-        <div class="stat"><div class="lbl">Spend</div><div class="val">$6,995</div></div>
-        <div class="stat"><div class="lbl">Completed Rev</div><div class="val">$120,868</div></div>
-        <div class="stat"><div class="lbl">Leads Booked</div><div class="val">102</div></div>
-        <div class="stat"><div class="lbl">Book Rate</div><div class="val">29.9%</div></div>
-      </div>
-    </div>
-
-    <div class="roas-card excellent">
-      <div class="channel">Google LSA</div>
-      <div class="roas-value">12.83x</div>
-      <div class="badge">★ Excellent</div>
-      <div class="stats">
-        <div class="stat"><div class="lbl">Spend</div><div class="val">$14,455</div></div>
-        <div class="stat"><div class="lbl">Completed Rev</div><div class="val">$185,445</div></div>
-        <div class="stat"><div class="lbl">Leads Booked</div><div class="val">131</div></div>
-        <div class="stat"><div class="lbl">Book Rate</div><div class="val">42.0%</div></div>
-      </div>
-    </div>
-
-    <div class="roas-card excellent">
-      <div class="channel">PPC — Plumbing</div>
-      <div class="roas-value">5.37x</div>
-      <div class="badge">★ Excellent</div>
-      <div class="stats">
-        <div class="stat"><div class="lbl">Spend</div><div class="val">$5,766</div></div>
-        <div class="stat"><div class="lbl">Completed Rev</div><div class="val">$31,077</div></div>
-        <div class="stat"><div class="lbl">Leads Booked</div><div class="val">39</div></div>
-        <div class="stat"><div class="lbl">Book Rate</div><div class="val">58.2%</div></div>
-      </div>
-    </div>
-
-    <div class="roas-card moderate">
-      <div class="channel">Paid Social (Facebook)</div>
-      <div class="roas-value">3.37x</div>
-      <div class="badge">✓ Moderate</div>
-      <div class="stats">
-        <div class="stat"><div class="lbl">Spend</div><div class="val">$7,264</div></div>
-        <div class="stat"><div class="lbl">Completed Rev</div><div class="val">$24,449</div></div>
-        <div class="stat"><div class="lbl">Leads Booked</div><div class="val">46</div></div>
-        <div class="stat"><div class="lbl">Book Rate</div><div class="val">288%*</div></div>
-      </div>
-    </div>
-
-    <div class="roas-card moderate">
-      <div class="channel">PPC — HVAC</div>
-      <div class="roas-value">2.09x</div>
-      <div class="badge">✓ Moderate</div>
-      <div class="stats">
-        <div class="stat"><div class="lbl">Spend</div><div class="val">$12,677</div></div>
-        <div class="stat"><div class="lbl">Completed Rev</div><div class="val">$26,553</div></div>
-        <div class="stat"><div class="lbl">Leads Booked</div><div class="val">25</div></div>
-        <div class="stat"><div class="lbl">Book Rate</div><div class="val">49.0%</div></div>
-      </div>
-    </div>
-
-    <div class="roas-card below">
-      <div class="channel">Direct Mail</div>
-      <div class="roas-value">0.41x</div>
-      <div class="badge">⚠ Below Break-Even</div>
-      <div class="stats">
-        <div class="stat"><div class="lbl">Spend</div><div class="val">$5,228</div></div>
-        <div class="stat"><div class="lbl">Completed Rev</div><div class="val">$2,146</div></div>
-        <div class="stat"><div class="lbl">Leads Booked</div><div class="val">2</div></div>
-        <div class="stat"><div class="lbl">Book Rate</div><div class="val">33.3%</div></div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- Campaign Performance -->
-  <div class="section-title">Campaign Performance — All Divisions</div>
-  <section class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Campaign</th>
-          <th class="num">Revenue</th>
-          <th>% of Total</th>
-          <th class="num">Inbound</th>
-          <th class="num">Booked</th>
-          <th class="num">Completed</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Calls Without Campaign<span class="ttype">ORGANIC</span></td>
-          <td class="num">$30,228</td>
-          <td><div class="pct-cell"><div class="pct-bar"><span style="width:100.0%"></span></div><div class="pct-num">15.5%</div></div></td>
-          <td class="num">358</td>
-          <td class="num">11</td>
-          <td class="num">3</td>
-        </tr>
-        <tr>
-          <td>Costco<span class="ttype">ORGANIC</span></td>
-          <td class="num">$28,539</td>
-          <td><div class="pct-cell"><div class="pct-bar"><span style="width:94.4%"></span></div><div class="pct-num">14.6%</div></div></td>
-          <td class="num">—</td>
-          <td class="num">10</td>
-          <td class="num">7</td>
-        </tr>
-        <tr>
-          <td>Google PPC (HVAC)<span class="ttype">PPC</span></td>
-          <td class="num">$25,174</td>
-          <td><div class="pct-cell"><div class="pct-bar"><span style="width:83.3%"></span></div><div class="pct-num">12.9%</div></div></td>
-          <td class="num">18</td>
-          <td class="num">11</td>
-          <td class="num">7</td>
-        </tr>
-        <tr>
-          <td>Customer Referral<span class="ttype">ORGANIC</span></td>
-          <td class="num">$24,571</td>
-          <td><div class="pct-cell"><div class="pct-bar"><span style="width:81.3%"></span></div><div class="pct-num">12.6%</div></div></td>
-          <td class="num">—</td>
-          <td class="num">4</td>
-          <td class="num">2</td>
-        </tr>
-        <tr>
-          <td>Previous Customer<span class="ttype">ORGANIC</span></td>
-          <td class="num">$21,314</td>
-          <td><div class="pct-cell"><div class="pct-bar"><span style="width:70.5%"></span></div><div class="pct-num">10.9%</div></div></td>
-          <td class="num">11</td>
-          <td class="num">29</td>
-          <td class="num">13</td>
-        </tr>
-        <tr>
-          <td>Energy Saver NC<span class="ttype">ORGANIC</span></td>
-          <td class="num">$17,000</td>
-          <td><div class="pct-cell"><div class="pct-bar"><span style="width:56.2%"></span></div><div class="pct-num">8.7%</div></div></td>
-          <td class="num">—</td>
-          <td class="num">2</td>
-          <td class="num">2</td>
-        </tr>
-        <tr>
-          <td>Facebook Ads<span class="ttype">SOCIAL</span></td>
-          <td class="num">$13,727</td>
-          <td><div class="pct-cell"><div class="pct-bar"><span style="width:45.4%"></span></div><div class="pct-num">7.0%</div></div></td>
-          <td class="num">1</td>
-          <td class="num">13</td>
-          <td class="num">6</td>
-        </tr>
-        <tr>
-          <td>Google LSA Ads<span class="ttype">LSA</span></td>
-          <td class="num">$9,859</td>
-          <td><div class="pct-cell"><div class="pct-bar"><span style="width:32.6%"></span></div><div class="pct-num">5.0%</div></div></td>
-          <td class="num">118</td>
-          <td class="num">38</td>
-          <td class="num">25</td>
-        </tr>
-        <tr>
-          <td>PMAG Customer<span class="ttype">ORGANIC</span></td>
-          <td class="num">$8,256</td>
-          <td><div class="pct-cell"><div class="pct-bar"><span style="width:27.3%"></span></div><div class="pct-num">4.2%</div></div></td>
-          <td class="num">—</td>
-          <td class="num">1</td>
-          <td class="num">0</td>
-        </tr>
-        <tr>
-          <td>Google PPC — Plumbing<span class="ttype">PPC</span></td>
-          <td class="num">$6,351</td>
-          <td><div class="pct-cell"><div class="pct-bar"><span style="width:21.0%"></span></div><div class="pct-num">3.2%</div></div></td>
-          <td class="num">23</td>
-          <td class="num">7</td>
-          <td class="num">2</td>
-        </tr>
-        <tr>
-          <td>Altitude Academy<span class="ttype">ACADEMY</span></td>
-          <td class="num">$4,246</td>
-          <td><div class="pct-cell"><div class="pct-bar"><span style="width:14.0%"></span></div><div class="pct-num">2.2%</div></div></td>
-          <td class="num">32</td>
-          <td class="num">3</td>
-          <td class="num">1</td>
-        </tr>
-        <tr>
-          <td>Website<span class="ttype">PAID SEO</span></td>
-          <td class="num">$2,383</td>
-          <td><div class="pct-cell"><div class="pct-bar"><span style="width:7.9%"></span></div><div class="pct-num">1.2%</div></div></td>
-          <td class="num">115</td>
-          <td class="num">8</td>
-          <td class="num">4</td>
-        </tr>
-        <tr>
-          <td>GMB — Virginia<span class="ttype">PAID SEO</span></td>
-          <td class="num">$1,947</td>
-          <td><div class="pct-cell"><div class="pct-bar"><span style="width:6.4%"></span></div><div class="pct-num">1.0%</div></div></td>
-          <td class="num">49</td>
-          <td class="num">12</td>
-          <td class="num">4</td>
-        </tr>
-        <tr>
-          <td>Maintenance Reminder SMS<span class="ttype">ORGANIC</span></td>
-          <td class="num">$1,157</td>
-          <td><div class="pct-cell"><div class="pct-bar"><span style="width:3.8%"></span></div><div class="pct-num">0.6%</div></div></td>
-          <td class="num">5</td>
-          <td class="num">3</td>
-          <td class="num">0</td>
-        </tr>
-        <tr>
-          <td>GMB NC<span class="ttype">PAID SEO</span></td>
-          <td class="num">$586</td>
-          <td><div class="pct-cell"><div class="pct-bar"><span style="width:1.9%"></span></div><div class="pct-num">0.3%</div></div></td>
-          <td class="num">10</td>
-          <td class="num">3</td>
-          <td class="num">2</td>
-        </tr>
-        <tr class="total-row">
-          <td>TOTALS</td>
-          <td class="num">$195,556</td>
-          <td><div class="pct-cell"><div class="pct-bar"><span style="width:100%; background:#0d1b2a;"></span></div><div class="pct-num">100%</div></div></td>
-          <td class="num">825</td>
-          <td class="num">162</td>
-          <td class="num">80</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- Strategic Summary -->
-  <div class="section-title">Strategic Summary</div>
-  <section class="summary-overview">
-    A revenue-strong week — <strong>$195,556 in completed revenue</strong> on $275,383 booked. <strong>HVAC Installation</strong> alone drove $146,470 (74.9% of total) at a $6,103 average ticket, while <strong>Paid SEO</strong> (17.28x ROAS) and <strong>Google LSA</strong> (12.83x) continued to anchor the paid mix. The headline concern is operational rather than media: <strong>abandoned calls climbed to 314 (38.1%)</strong>, up 7 points week-over-week — meaningful revenue exposure at a $2,444 average ticket. Focus next week is on call recovery and tightening budget caps on PPC HVAC and Paid Social.
-  </section>
-
-  <div class="summary-grid">
-    <div class="summary-col working">
-      <h3>What's Working</h3>
-      <ul>
-        <li><strong>Paid SEO at 17.28x ROAS</strong> — $120,868 revenue on $6,995 spend. $20.53 cost-per-lead is exceptional.</li>
-        <li><strong>Google LSA driving volume</strong> — $185,445 completed revenue, 42% book rate, well within the $17,000 budget.</li>
-        <li><strong>PPC Plumbing solid at 5.37x</strong> — strong 58.2% book rate with $2,234 budget remaining for scaling.</li>
-        <li><strong>PPC HVAC rebound to 2.09x</strong> — up from 0.20 last week, driven by an installation attribution.</li>
-        <li><strong>Organic word-of-mouth</strong> — Customer Referral + Previous Customer combined for $45,884 with zero ad spend.</li>
-        <li><strong>HVAC Install division</strong> — $146,470 revenue at a $6,103 avg ticket; 74.9% of weekly total.</li>
-      </ul>
-    </div>
-    <div class="summary-col needs">
-      <h3>What Needs Work</h3>
-      <ul>
-        <li><strong>Abandon rate at 38.1%</strong> — 314 of 825 calls unanswered, up from 31.0% last week.</li>
-        <li><strong>GMB–Virginia at 71.4% abandon</strong> — worsening from 62%; routing review urgent.</li>
-        <li><strong>Website abandon at 40%</strong> — 46 of 115 calls dropped, a new high for that channel.</li>
-        <li><strong>Budget overruns</strong> — PPC HVAC ran $3,977 over and Paid Social $1,416 over their weekly caps.</li>
-        <li><strong>Direct Mail tracking gap</strong> — 0.41x reported ROAS, but cross-reference confirms true contribution exceeds what ServiceTitan captures.</li>
-        <li><strong>PPC HVAC audit pending</strong> — managing-team response still outstanding from last week.</li>
-      </ul>
-    </div>
+    <span class="date-badge">📅 April 20 – 26, 2026</span>
   </div>
 
-  <div class="actions-card">
-    <h3>Recommended Next Steps</h3>
-    <ol>
-      <li><strong>Abandoned-call recovery sweep.</strong> Pull the 314 abandons from ServiceTitan; same-day or next-morning callback/SMS outreach. Priority: GMB–Virginia and Website lines.</li>
-      <li><strong>GMB–Virginia routing audit.</strong> Confirm GBP forwarding number and evaluate dedicated CSR coverage or overflow answering for the Virginia territory.</li>
-      <li><strong>Continue Direct Mail attribution work.</strong> Don't make spend decisions on ServiceTitan ROAS alone — finish the multi-layer (tracked calls + name match + address match) framework first.</li>
-      <li><strong>Push PPC team for hard budget caps.</strong> Both PPC HVAC and Paid Social exceeded weekly budgets; lock caps in Google Ads and Meta to stop unplanned overspend.</li>
-      <li><strong>Watch PPC HVAC closely.</strong> Last week's improvement was an attribution event, not a campaign correction — escalate if the audit response stays unanswered.</li>
-    </ol>
-  </div>
+  <!-- EXEC SNAPSHOT -->
+  <section>
+    <div class="section-title">Executive Snapshot</div>
+    <div class="snapshot-grid">
+      <div class="snap-card">
+        <div class="snap-label">Total Completed Revenue</div>
+        <div class="snap-value">$195,556</div>
+        <div class="snap-sub">All divisions combined · 80 jobs completed</div>
+      </div>
+      <div class="snap-card green">
+        <div class="snap-label">Paid Marketing Revenue</div>
+        <div class="snap-value">$60,027<span class="snap-pct pct-green">30.7%</span></div>
+        <div class="snap-sub">GBP/SEO · LSA · PPC · Paid Social · Direct Mail</div>
+      </div>
+      <div class="snap-card orange">
+        <div class="snap-label">Organic / Direct Revenue</div>
+        <div class="snap-value">$135,529<span class="snap-pct pct-orange">69.3%</span></div>
+        <div class="snap-sub">Referrals · Repeat Customers · GMB · Costco · PMAG</div>
+      </div>
+    </div>
+  </section>
 
-  <footer class="footer">
-    Generated by Claude for Jay Is On The Way · Reporting Period: April 20 – 26, 2026<br />
-    Source: Weekly Marketing Performance Summary uploaded by Lorie Shumate
-  </footer>
+  <!-- CALL BOARD -->
+  <section>
+    <div class="section-title">Call Board — Week at a Glance</div>
+    <div class="call-board">
+      <div class="call-stat">
+        <div class="label">Inbound Calls</div>
+        <div class="value">825</div>
+      </div>
+      <div class="call-stat">
+        <div class="label">Calls Answered</div>
+        <div class="value">511</div>
+      </div>
+      <div class="call-stat">
+        <div class="label">Jobs Booked</div>
+        <div class="value">162</div>
+      </div>
+      <div class="call-stat">
+        <div class="label">Abandoned</div>
+        <div class="value abandoned">314</div>
+      </div>
+      <div class="call-stat">
+        <div class="label">Jobs Completed</div>
+        <div class="value">80</div>
+      </div>
+      <div class="call-stat">
+        <div class="label">Abandon Rate</div>
+        <div class="value abandoned">38.1%</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVISION PERFORMANCE -->
+  <section>
+    <div class="section-title">Division Performance Breakdown</div>
+    <div class="division-grid">
+      <div class="div-card">
+        <div class="div-title">❄ HVAC Service</div>
+        <div class="div-tag">Service</div>
+        <div class="div-revenue">$29,919</div>
+        <div class="div-stats">
+          <div><span>Total Sales (Booked)</span><span>$93,809</span></div>
+          <div><span>Jobs Booked</span><span>64</span></div>
+          <div><span>Jobs Completed</span><span>23</span></div>
+          <div><span>Avg Ticket</span><span>$1,301</span></div>
+        </div>
+      </div>
+      <div class="div-card">
+        <div class="div-title">🪠 Plumbing</div>
+        <div class="div-tag">Service + Install</div>
+        <div class="div-revenue">$19,167</div>
+        <div class="div-stats">
+          <div><span>Total Sales (Booked)</span><span>$28,358</span></div>
+          <div><span>Jobs Booked</span><span>39</span></div>
+          <div><span>Jobs Completed</span><span>21</span></div>
+          <div><span>Avg Ticket</span><span>$913</span></div>
+        </div>
+      </div>
+      <div class="div-card">
+        <div class="div-title">🔧 HVAC Installation</div>
+        <div class="div-tag">Install</div>
+        <div class="div-revenue">$146,470</div>
+        <div class="div-stats">
+          <div><span>Total Sales (Booked)</span><span>—</span></div>
+          <div><span>Jobs Booked</span><span>31</span></div>
+          <div><span>Jobs Completed</span><span>24</span></div>
+          <div><span>Avg Ticket</span><span>$6,103</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROAS BY CHANNEL -->
+  <section>
+    <div class="section-title">Paid Channel ROAS — April 20 – 26, 2026</div>
+    <div class="roas-grid">
+      <div class="roas-card">
+        <div class="roas-channel">🔎 Paid SEO — GBP &amp; Website</div>
+        <div class="roas-value">17.28×</div>
+        <div class="roas-badge badge-good">★ Excellent</div>
+        <div class="roas-detail">
+          <div class="row"><span>Spend</span><span>$6,995</span></div>
+          <div class="row"><span>Completed Revenue</span><span>$120,868</span></div>
+          <div class="row"><span>Leads</span><span>341</span></div>
+          <div class="row"><span>Leads Booked</span><span>102 (29.9%)</span></div>
+          <div class="row"><span>Cost / Lead</span><span>$20.53</span></div>
+        </div>
+      </div>
+
+      <div class="roas-card">
+        <div class="roas-channel">⭐ Google LSA</div>
+        <div class="roas-value">12.83×</div>
+        <div class="roas-badge badge-good">★ Excellent</div>
+        <div class="roas-detail">
+          <div class="row"><span>Spend</span><span>$14,455</span></div>
+          <div class="row"><span>Completed Revenue</span><span>$185,445</span></div>
+          <div class="row"><span>Leads</span><span>312</span></div>
+          <div class="row"><span>Leads Booked</span><span>131 (42.0%)</span></div>
+          <div class="row"><span>Cost / Lead</span><span>$46.33</span></div>
+        </div>
+      </div>
+
+      <div class="roas-card">
+        <div class="roas-channel">🧰 PPC — Plumbing</div>
+        <div class="roas-value">5.37×</div>
+        <div class="roas-badge badge-good">★ Excellent</div>
+        <div class="roas-detail">
+          <div class="row"><span>Spend</span><span>$5,766</span></div>
+          <div class="row"><span>Completed Revenue</span><span>$31,077</span></div>
+          <div class="row"><span>Leads</span><span>67</span></div>
+          <div class="row"><span>Leads Booked</span><span>39 (58.2%)</span></div>
+          <div class="row"><span>Cost / Lead</span><span>$86.35</span></div>
+        </div>
+      </div>
+
+      <div class="roas-card warn">
+        <div class="roas-channel">📱 Paid Social (Facebook)</div>
+        <div class="roas-value warn">3.37×</div>
+        <div class="roas-badge badge-mid">✓ Moderate</div>
+        <div class="roas-detail">
+          <div class="row"><span>Spend</span><span>$7,264 <em>(+$1,416 over)</em></span></div>
+          <div class="row"><span>Completed Revenue</span><span>$24,449</span></div>
+          <div class="row"><span>Leads</span><span>16</span></div>
+          <div class="row"><span>Leads Booked</span><span>46 (288%)*</span></div>
+          <div class="row"><span>Cost / Lead</span><span>$454.02</span></div>
+        </div>
+      </div>
+
+      <div class="roas-card warn">
+        <div class="roas-channel">🔥 PPC — HVAC</div>
+        <div class="roas-value warn">2.09×</div>
+        <div class="roas-badge badge-mid">✓ Moderate</div>
+        <div class="roas-detail">
+          <div class="row"><span>Spend</span><span>$12,677 <em>(+$3,977 over)</em></span></div>
+          <div class="row"><span>Completed Revenue</span><span>$26,553</span></div>
+          <div class="row"><span>Leads</span><span>51</span></div>
+          <div class="row"><span>Leads Booked</span><span>25 (49.0%)</span></div>
+          <div class="row"><span>Cost / Lead</span><span>$248.54</span></div>
+        </div>
+      </div>
+
+      <div class="roas-card bad">
+        <div class="roas-channel">✉ Direct Mail</div>
+        <div class="roas-value bad">-0.41×</div>
+        <div class="roas-badge badge-bad">⚠ Below Break-Even</div>
+        <div class="roas-detail">
+          <div class="row"><span>Spend</span><span>$5,228</span></div>
+          <div class="row"><span>Completed Revenue</span><span>$2,146</span></div>
+          <div class="row"><span>Leads</span><span>6</span></div>
+          <div class="row"><span>Leads Booked</span><span>2 (33.3%)</span></div>
+          <div class="row"><span>Cost / Lead</span><span>$900.00</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMPAIGN PERFORMANCE TABLE -->
+  <section>
+    <div class="section-title">Top Active Campaigns — All Divisions Combined</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Campaign</th>
+            <th class="num">Revenue</th>
+            <th>% of Total</th>
+            <th class="num">Inbound</th>
+            <th class="num">Booked</th>
+            <th class="num">Completed</th>
+            <th class="num">Total Sales</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Calls Without Campaign<span class="camp-tag">Organic</span></td>
+            <td class="num">$30,228</td>
+            <td><div class="pct-bar-wrap"><div class="pct-bar"><div class="pct-bar-fill" style="width:100%"></div></div><div class="pct-num">15.5%</div></div></td>
+            <td class="num">358</td>
+            <td class="num">11</td>
+            <td class="num">3</td>
+            <td class="num">$8,700</td>
+          </tr>
+          <tr>
+            <td>Costco<span class="camp-tag">Organic</span></td>
+            <td class="num">$28,539</td>
+            <td><div class="pct-bar-wrap"><div class="pct-bar"><div class="pct-bar-fill" style="width:94.4%"></div></div><div class="pct-num">14.6%</div></div></td>
+            <td class="num">—</td>
+            <td class="num">10</td>
+            <td class="num">7</td>
+            <td class="num">$5,127</td>
+          </tr>
+          <tr>
+            <td>Google PPC (HVAC)<span class="camp-tag">PPC</span></td>
+            <td class="num">$25,174</td>
+            <td><div class="pct-bar-wrap"><div class="pct-bar"><div class="pct-bar-fill" style="width:83.3%"></div></div><div class="pct-num">12.9%</div></div></td>
+            <td class="num">18</td>
+            <td class="num">11</td>
+            <td class="num">7</td>
+            <td class="num">$24,194</td>
+          </tr>
+          <tr>
+            <td>Customer Referral<span class="camp-tag">Organic</span></td>
+            <td class="num">$24,571</td>
+            <td><div class="pct-bar-wrap"><div class="pct-bar"><div class="pct-bar-fill" style="width:81.3%"></div></div><div class="pct-num">12.6%</div></div></td>
+            <td class="num">—</td>
+            <td class="num">4</td>
+            <td class="num">2</td>
+            <td class="num">$47,459</td>
+          </tr>
+          <tr>
+            <td>Previous Customer<span class="camp-tag">Organic</span></td>
+            <td class="num">$21,314</td>
+            <td><div class="pct-bar-wrap"><div class="pct-bar"><div class="pct-bar-fill" style="width:70.5%"></div></div><div class="pct-num">10.9%</div></div></td>
+            <td class="num">11</td>
+            <td class="num">29</td>
+            <td class="num">13</td>
+            <td class="num">$29,734</td>
+          </tr>
+          <tr>
+            <td>Energy Saver NC<span class="camp-tag">Organic</span></td>
+            <td class="num">$17,000</td>
+            <td><div class="pct-bar-wrap"><div class="pct-bar"><div class="pct-bar-fill" style="width:56.2%"></div></div><div class="pct-num">8.7%</div></div></td>
+            <td class="num">—</td>
+            <td class="num">2</td>
+            <td class="num">2</td>
+            <td class="num">—</td>
+          </tr>
+          <tr>
+            <td>Facebook Ads<span class="camp-tag">Social</span></td>
+            <td class="num">$13,727</td>
+            <td><div class="pct-bar-wrap"><div class="pct-bar"><div class="pct-bar-fill" style="width:45.4%"></div></div><div class="pct-num">7.0%</div></div></td>
+            <td class="num">1</td>
+            <td class="num">13</td>
+            <td class="num">6</td>
+            <td class="num">$72,509</td>
+          </tr>
+          <tr>
+            <td>Google LSA Ads<span class="camp-tag">LSA</span></td>
+            <td class="num">$9,859</td>
+            <td><div class="pct-bar-wrap"><div class="pct-bar"><div class="pct-bar-fill" style="width:32.6%"></div></div><div class="pct-num">5.0%</div></div></td>
+            <td class="num">118</td>
+            <td class="num">38</td>
+            <td class="num">25</td>
+            <td class="num">$36,763</td>
+          </tr>
+          <tr>
+            <td>PMAG Customer<span class="camp-tag">Organic</span></td>
+            <td class="num">$8,256</td>
+            <td><div class="pct-bar-wrap"><div class="pct-bar"><div class="pct-bar-fill" style="width:27.3%"></div></div><div class="pct-num">4.2%</div></div></td>
+            <td class="num">—</td>
+            <td class="num">1</td>
+            <td class="num">0</td>
+            <td class="num">$6,394</td>
+          </tr>
+          <tr>
+            <td>Google PPC — Plumbing<span class="camp-tag">PPC</span></td>
+            <td class="num">$6,351</td>
+            <td><div class="pct-bar-wrap"><div class="pct-bar"><div class="pct-bar-fill" style="width:21.0%"></div></div><div class="pct-num">3.2%</div></div></td>
+            <td class="num">23</td>
+            <td class="num">7</td>
+            <td class="num">2</td>
+            <td class="num">$5,190</td>
+          </tr>
+          <tr>
+            <td>Altitude Academy<span class="camp-tag">Academy</span></td>
+            <td class="num">$4,246</td>
+            <td><div class="pct-bar-wrap"><div class="pct-bar"><div class="pct-bar-fill" style="width:14.0%"></div></div><div class="pct-num">2.2%</div></div></td>
+            <td class="num">32</td>
+            <td class="num">3</td>
+            <td class="num">1</td>
+            <td class="num">$6,066</td>
+          </tr>
+          <tr>
+            <td>Website<span class="camp-tag">Paid SEO</span></td>
+            <td class="num">$2,383</td>
+            <td><div class="pct-bar-wrap"><div class="pct-bar"><div class="pct-bar-fill" style="width:7.9%"></div></div><div class="pct-num">1.2%</div></div></td>
+            <td class="num">115</td>
+            <td class="num">8</td>
+            <td class="num">4</td>
+            <td class="num">$4,255</td>
+          </tr>
+          <tr>
+            <td>GMB — Virginia<span class="camp-tag">Paid SEO</span></td>
+            <td class="num">$1,947</td>
+            <td><div class="pct-bar-wrap"><div class="pct-bar"><div class="pct-bar-fill" style="width:6.4%"></div></div><div class="pct-num">1.0%</div></div></td>
+            <td class="num">49</td>
+            <td class="num">12</td>
+            <td class="num">4</td>
+            <td class="num">$26,348</td>
+          </tr>
+          <tr>
+            <td>Maintenance Reminder SMS<span class="camp-tag">Organic</span></td>
+            <td class="num">$1,157</td>
+            <td><div class="pct-bar-wrap"><div class="pct-bar"><div class="pct-bar-fill" style="width:3.8%"></div></div><div class="pct-num">0.6%</div></div></td>
+            <td class="num">5</td>
+            <td class="num">3</td>
+            <td class="num">0</td>
+            <td class="num">$101</td>
+          </tr>
+          <tr>
+            <td>GMB NC<span class="camp-tag">Paid SEO</span></td>
+            <td class="num">$586</td>
+            <td><div class="pct-bar-wrap"><div class="pct-bar"><div class="pct-bar-fill" style="width:1.9%"></div></div><div class="pct-num">0.3%</div></div></td>
+            <td class="num">10</td>
+            <td class="num">3</td>
+            <td class="num">2</td>
+            <td class="num">$2,543</td>
+          </tr>
+          <tr class="total-row">
+            <td>TOTALS</td>
+            <td class="num">$195,556</td>
+            <td>100.0%</td>
+            <td class="num">825</td>
+            <td class="num">162</td>
+            <td class="num">80</td>
+            <td class="num">$275,383</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ANALYSIS -->
+  <section>
+    <div class="section-title">Marketing Coordinator's Analysis</div>
+    <div class="analysis-grid">
+      <div class="analysis-card wins">
+        <h3>🏆 Wins This Week</h3>
+        <ul>
+          <li><strong>Paid SEO leading at 17.28× ROAS</strong> — GBP/Website/SEO bucket continues to be the most efficient paid channel: $120,868 revenue on $6,995 spend, 341 leads at $20.53 each.</li>
+          <li><strong>PPC HVAC rebounds to 2.09× ROAS</strong> — Significant improvement from last week's 0.20×, driven by an installation job attributed to this campaign. Audit pending.</li>
+          <li><strong>HVAC Installation at $146,470</strong> — 74.9% of total weekly revenue at a $6,103 avg ticket. Costco, Customer Referral, and Calls w/o Campaign are the top install drivers.</li>
+          <li><strong>Word-of-mouth working</strong> — Customer Referral &amp; Previous Customer combined $45,884 in revenue with zero media spend.</li>
+        </ul>
+      </div>
+      <div class="analysis-card attn">
+        <h3>⚠ Areas Requiring Attention</h3>
+        <ul>
+          <li><strong>Abandon rate up to 38.1%</strong> — Worsening trend (was 31.0% last week). 314 of 825 calls went unanswered. At $2,444 avg ticket, that's significant revenue exposure.</li>
+          <li><strong>GMB–Virginia 71.4% abandon</strong> — Up from 62% last week. Needs immediate routing review.</li>
+          <li><strong>Direct Mail ROAS understated</strong> — Tracked -0.41× but cross-reference attribution confirms mailers contribute beyond what the tracking number captures. True ROAS is higher.</li>
+          <li><strong>PPC HVAC &amp; Paid Social exceeded budget</strong> — PPC HVAC $3,977 over; Paid Social $1,416 over. Flag with ad management team for hard budget caps.</li>
+          <li><strong>Website abandon rate 40%</strong> — New high for that channel. 46 of 115 calls abandoned. Significant untapped potential if CSR coverage improves.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    Generated by Claude for Jay Is On The Way · Reporting Period: April 20 – 26, 2026 · Source: Weekly Marketing Performance Summary uploaded by Lorie Shumate<br>
+    Jay's Heating, Air &amp; Plumbing · 130 Greyhound Rd, Mount Airy, NC 27030 · jayisontheway.com · "We Take Home Comfort to New Heights."
+  </div>
 
 </div>
 </body>
